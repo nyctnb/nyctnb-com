@@ -39,7 +39,7 @@ body {
     font-family: 'Helvetica', 'Arial', sans-serif;
 
     height: 125px;
-    width: 100%;
+    width: 75%;
     min-width: 400px;
 
     border-width: 0px;
@@ -47,7 +47,7 @@ body {
     box-shadow: 3px 3px #444;
     outline-style: none;
     
-    margin: 10px 15px;
+    margin: 10px 13%;
 }
 
 .social-button:active {
