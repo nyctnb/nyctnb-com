@@ -1,0 +1,92 @@
+/**
+ * NYC Tech & Beer - Stylesheet
+ */
+
+body {
+    background-color: #000D40;
+}
+
+/* Banner section */
+
+.banner-logo-container {
+    position: relative;
+    max-width: 100%;
+    height: 40%;
+}
+
+.banner-logo {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/* Links section */
+
+.links-container {
+    position: relative;
+    align-items: center;
+    align-self: center;
+    display: inline-block;
+    width: 100%;
+}
+
+.social-button {
+    background-color: orangered;
+
+    display: inline-block;
+
+    color: #333;
+    font-size: 40px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+
+    height: 125px;
+    width: 100%;
+    min-width: 400px;
+
+    border-width: 0px;
+    border-radius: 5px;
+    box-shadow: 3px 3px #444;
+    outline-style: none;
+    
+    margin: 10px 15px;
+}
+
+.social-button:active {
+    box-shadow: -2px -2px black;
+}
+
+.social-button__icon {
+    height: 30px;
+    width: auto;
+    border-radius: 2px;
+    border-width: 1px;
+    border-color: white;
+    border-style: solid;
+}
+
+.meetup-theme {
+    background-color: crimson;
+    color: white;
+}
+
+.fb-theme {
+    background-color: dodgerblue;
+    color: white;
+}
+
+/* Description section */
+
+.description-container {
+    padding: 30px;
+}
+
+.description {
+    color: white;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.description__tagline {
+    font-size: 35px;
+}
