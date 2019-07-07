@@ -56,26 +56,17 @@ body {
     box-shadow: -2px -2px black;
 }
 
-.social-button__icon {
-    height: 30px;
-    width: auto;
-    border-radius: 2px;
-    border-width: 1px;
-    border-color: white;
-    border-style: solid;
-}
-
 .social-button__link {
     text-decoration: none;
 }
 
 .meetup-theme {
-    background-color: crimson;
+    background-color: #F7405F;
     color: white;
 }
 
 .fb-theme {
-    background-color: dodgerblue;
+    background-color: #4267B2;
     color: white;
 }
 
