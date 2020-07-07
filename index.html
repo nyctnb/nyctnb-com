@@ -10,7 +10,7 @@
     <meta name="title" content="NYC Tech & Beer">
     <link rel="icon" type="image/png" href="https://cdn.bglad.io/img/nyctnb/nyctnb-logo-vtall.png">
     <meta name="description" content="NYC's group for people who love talking tech, drinking craft beer, and everything in between.">
-    <meta name="keywords" content="nyc,tech,technology,beer,craft beer,software,startup">
+    <meta name="keywords" content="nyc,new york,tech,technology,beer,craft beer,software,startup">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="English">
@@ -48,24 +48,36 @@
         <img class="banner-logo" src="https://cdn.bglad.io/img/nyctnb/nyctnb-logo_tight.png" alt="NYC Tech & Beer">
     </section>
 
+    <!-- Description -->
+    <section class="description-container">
+        <p class="description description__tagline">
+            Brew it and they will come!
+        </p>
+        <p class="description">
+            New York City Tech & Beer is for those interested in talking tech, drinking craft beer, and everything in between!
+        </p>
+        <p class="description">Whether you're a programmer, a tech entrepreneur, or an amateur tech enthusiast who wants to meet with others and enjoy great beer, this is the group for you.</p>
+        <p class="description">Swing by, drink, and connect.</p>
+    </section>
+
     <!-- Social Links -->
     <section class="links-container">
+        <!-- <div> -->
             <a class="social-button__link" href="https://www.meetup.com/NYCTnB" target="_blank">
-                    <button class="social-button meetup-theme">
-                        <span class="social-button-shine">
-                            <i class="fab fa-meetup"></i>
-                            Events
-                        </span>
-                    </button>
+                <button class="social-button meetup-theme">
+                    <i class="fab fa-meetup"></i>
+                    Events
+                </button>
             </a> <!-- Meetup -->
-        <a class="social-button__link" href="https://instagram.com/nyctnb" target="_blank">
-            <span class="social-button-shine">
+        <!-- </div>
+        <div> -->
+            <a class="social-button__link" href="https://instagram.com/nyctnb" target="_blank">
                 <button class="social-button instagram-theme">
                     <i class="fab fa-instagram"></i>
                     Media
                 </button>
-            </span>
-        </a> <!-- Instagram -->
+            </a> <!-- Instagram -->
+        <!-- </div> -->
     </section>
 
     <!-- Sign Up Form -->
@@ -81,32 +93,26 @@
                 target="_blank"
                 novalidate
             >
-                <input type="email" name="EMAIL" class="mce-input" id="mce-EMAIL" placeholder="marty.mcfly@gmail.com" required>
+                <h1>Learn About Upcoming Events:</h1>
+                <input type="email" name="EMAIL" class="mce-input" id="mce-EMAIL" placeholder="Email" required />
+                <div class="mc-field-group">
+                    <!-- <label for="mce-LNAME">Last Name </label> -->
+                    <input type="text" name="FNAME" class="mce-input mce-input-name" id="mce-FNAME" placeholder="First Name" />
+                    <input type="text" name="LNAME" class="mce-input mce-input-name" id="mce-LNAME" placeholder="Last Name" />
+                </div>
 
                 <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
                 <div style="position: absolute; left: -5000px;" aria-hidden="true">
                     <input type="text" name="b_d1cbade68677c2c8139686094_567ee1a492" tabindex="-1" value="">
                 </div>
 
-                <button type="submit" name="subscribe" id="mc-embedded-subscribe">Sign Up</button>
+                <button type="submit" name="subscribe" id="mc-embedded-subscribe" disabled>Sign Up</button>
             </form>
         </div>
     </section>
 
-    <!-- Description -->
-    <section class="description-container">
-        <p class="description description__tagline">
-            Brew it and they will come!
-        </p>
-        <p class="description">
-            New York City Tech & Beer is for those interested in talking tech, drinking craft beer, and everything in between!
-        </p>
-        <p class="description">Whether you're a programmer, a tech entrepreneur, or an amateur tech enthusiast who wants to meet with others and enjoy great beer, this is the group for you.</p>
-        <p class="description description__tagline">Swing by, drink, and connect.</p>
-    </section>
-
     <!-- Footer (Small Links) -->
-    <footer class="small-links-container">
+    <footer>
         <a class="footer-icon__link" href="https://www.meetup.com/NYCTnB" target="_blank">
             <i class="fab fa-meetup footer-icon meetup-theme-icon" aria-hidden="true"></i>
         </a> <!-- Meetup -->
@@ -117,6 +123,35 @@
             <i class="fab fa-facebook-square footer-icon fb-theme-icon" aria-hidden="true"></i>
         </a> <!-- FB -->
     </footer>
+
+    <!-- MCE onChange logic -->
+    <script>
+        (() => {
+            /* Mailchimp input logic */
+
+            // Mailchimp input elements
+            const emailInput = document.getElementById('mce-EMAIL');
+            const firstNameInput = document.getElementById('mce-FNAME');
+            const lastNameInput = document.getElementById('mce-LNAME');
+            const submitButton = document.getElementById('mc-embedded-subscribe');
+
+            (() => {
+                // Setting onchange/keyup event listeners for Mailchimp input elements
+                emailInput.addEventListener('change', onChangeMceInput);
+                emailInput.addEventListener('keyup', onChangeMceInput);
+
+                firstNameInput.addEventListener('change', onChangeMceInput);
+                firstNameInput.addEventListener('keyup', onChangeMceInput);
+
+                lastNameInput.addEventListener('change', onChangeMceInput);
+                lastNameInput.addEventListener('keyup', onChangeMceInput);
+            })();
+            // onchange listener that sets the submit button to disabled/enabled
+            function onChangeMceInput(e) {
+                submitButton.disabled = !(emailInput.value && emailInput.value.length > 0);
+            }
+        })();
+    </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119556311-6"></script>
