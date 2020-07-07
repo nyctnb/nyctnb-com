@@ -45,10 +45,15 @@ button, .button {
 
 /* Mailchimp Form */
 .mce-input {
-    width: 50%;
+    width: 90%;
     max-width: 300px;
 
     margin: 3px 5px;
+}
+
+.mce-input-name {
+    max-width: 140px;
+    margin: 3px 3px;
 }
 
 #mc-embedded-subscribe {
@@ -56,9 +61,11 @@ button, .button {
     max-width: 100px;
     margin-top: 10px;
 }
-
 #mc-embedded-subscribe:hover {
     background-color: #558;
+}
+#mc-embedded-subscribe:active {
+    background-color: #336;
 }
 
 
@@ -87,7 +94,7 @@ button, .button {
 
     border-width: 0px;
     border-radius: 5px;
-    box-shadow: 3px 3px #555;
+    box-shadow: 3px 3px #333;
     outline-style: none;
     
     margin: 10px 10px;
@@ -105,9 +112,11 @@ button, .button {
     background-color: #ff2a4e;
     color: white;
 }
-
 .meetup-theme:hover {
     background-color: #ff4262;
+}
+.meetup-theme:active {
+    background-color: #b81e38;
 }
 
 .instagram-theme {
@@ -122,12 +131,21 @@ button, .button {
 }
 .instagram-theme:hover {
     background: radial-gradient(
-            circle at 30% 107%,
-            #fff9bd 0%,
-            #fff9bd 5%,
-            #ff6f62 45%,
-            #d33ba3 60%,
-            #4971e7 90%);
+                    circle at 30% 107%,
+                    #fff9bd 0%,
+                    #fff9bd 5%,
+                    #ff6f62 45%,
+                    #d33ba3 60%,
+                    #4971e7 90%);
+}
+.instagram-theme:active {
+    background: radial-gradient(
+                    circle at 30% 107%,
+                    #b6b06c 0%,
+                    #b6b06c 5%,
+                    #c04135 45%,
+                    #9b1a72 60%,
+                    #1f44b3 90%);
 }
 
 /* .fb-theme {
@@ -154,6 +172,7 @@ button, .button {
 /* Footer */
 footer {
     text-align: center;
+    margin: 30px auto 10px auto;
 }
 
 .footer-icon {
