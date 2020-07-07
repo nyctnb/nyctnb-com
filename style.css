@@ -101,7 +101,7 @@ button, .button {
 }
 
 .social-button:active {
-    box-shadow: 3px 3px 2px #555 inset;
+    box-shadow: 3px 3px #333 inset;
 }
 
 .social-button__link {
