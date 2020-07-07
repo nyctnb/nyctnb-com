@@ -7,35 +7,70 @@ body {
     padding-bottom: 15px;
 }
 
+p, h1,h2,h3,h4,h5,h6, label {
+    font-family: 'EB Garamond', 'Times New Roman', serif;
+    color: white;
+}
+
+p {
+    font-size: 30px;
+}
+
+label {
+    font-size: 20px;
+}
+
 section {
     margin: 15px auto;
-}
 
-/* Banner section */
-
-.banner-logo-container {
-    position: relative;
-    max-width: 100%;
-    height: 40%;
-    text-align: center
-}
-
-.banner-logo {
-    max-height: 100%;
     width: 100%;
     max-width: 900px;
-    margin: auto 5px auto 0px;
-}
-
-/* Links section */
-
-.links-container {
-    position: relative;
-    display: inline-block;
-    width: 100%;
     text-align: center;
 }
 
+input, button {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    height: 25px;
+    font-size: 15px;
+    padding: 3px;
+    border-radius: 4px;
+}
+
+button, .button {
+    height: 35px;
+    background-color: #447;
+    color: white;
+}
+
+
+/* Mailchimp Form */
+.mce-input {
+    width: 50%;
+    max-width: 300px;
+
+    margin: 3px 5px;
+}
+
+#mc-embedded-subscribe {
+    width: 30%;
+    max-width: 100px;
+    margin-top: 10px;
+}
+
+#mc-embedded-subscribe:hover {
+    background-color: #558;
+}
+
+
+/* Banner section */
+.banner-logo {
+    max-height: 100%;
+    width: 100%;
+    margin: auto 5px auto 0px;
+}
+
+
+/* Links section */
 .social-button {
     background-color: orangered;
 
@@ -52,14 +87,14 @@ section {
 
     border-width: 0px;
     border-radius: 5px;
-    box-shadow: 3px 3px #444;
+    box-shadow: 3px 3px #555;
     outline-style: none;
     
     margin: 10px 10px;
 }
 
 .social-button:active {
-    box-shadow: 2px 2px #444 inset;
+    box-shadow: 3px 3px 2px #555 inset;
 }
 
 .social-button__link {
@@ -67,13 +102,12 @@ section {
 }
 
 .meetup-theme {
-    background-color: #F7405F;
+    background-color: #ff2a4e;
     color: white;
 }
 
-.fb-theme {
-    background-color: #4267B2;
-    color: white;
+.meetup-theme:hover {
+    background-color: #ff4262;
 }
 
 .instagram-theme {
@@ -86,17 +120,27 @@ section {
                     #285AEB 90%);
     color: white;
 }
-
-/* Description section */
-
-.description-container {
-    padding: auto 30px;
+.instagram-theme:hover {
+    background: radial-gradient(
+            circle at 30% 107%,
+            #fff9bd 0%,
+            #fff9bd 5%,
+            #ff6f62 45%,
+            #d33ba3 60%,
+            #4971e7 90%);
 }
 
-.description {
+/* .fb-theme {
+    background-color: #4267B2;
     color: white;
-    font-family: 'EB Garamond', 'Arial', sans-serif;
-    font-size: 30px;
+}
+.fb-theme:hover {
+    background-color: #4267B2aa;
+} */
+
+
+/* Description section */
+.description {
     text-align: center;
     line-height: 1.3;
     margin: 20px 0px;
@@ -106,8 +150,8 @@ section {
     font-size: 40px;
 }
 
-/* Footer */
 
+/* Footer */
 footer {
     text-align: center;
 }
@@ -116,8 +160,27 @@ footer {
     color: white;
     font-size: 25px;
     margin: auto 5px;
+    border-radius: 5px;
 }
 
-.footer-icon:hover {
-    color: dodgerblue;
+.footer-icon__link {
+    text-decoration: none;
+}
+
+.meetup-theme-icon:hover {
+    color: #ff2a4e;
+}
+
+.instagram-theme-icon:hover {
+    background: radial-gradient(
+                    circle at 30% 107%,
+                    #fdf497 0%,
+                    #fdf497 5%,
+                    #fd5949 45%,
+                    #d6249f 60%,
+                    #285AEB 90%);
+}
+
+.fb-theme-icon:hover {
+    color: #4267B2;
 }
