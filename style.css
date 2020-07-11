@@ -43,6 +43,20 @@ button, .button {
 }
 
 
+/* Banner section */
+.banner-logo {
+    max-height: 100%;
+    width: 100%;
+    margin: auto 5px auto 0px;
+}
+
+/* Title section */
+.title-container h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    font-weight: 400;
+}
+
 /* Mailchimp Form */
 .mce-input {
     width: 90%;
@@ -66,14 +80,6 @@ button, .button {
 }
 #mc-embedded-subscribe:active {
     background-color: #336;
-}
-
-
-/* Banner section */
-.banner-logo {
-    max-height: 100%;
-    width: 100%;
-    margin: auto 5px auto 0px;
 }
 
 
