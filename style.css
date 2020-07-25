@@ -162,6 +162,11 @@ button, .button {
                     #1f44b3 90%);
 }
 
+.shop-theme {
+    background-color: white;
+    color: #000d40;
+}
+
 /* .fb-theme {
     background-color: #4267B2;
     color: white;
