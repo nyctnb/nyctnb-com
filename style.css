@@ -50,6 +50,11 @@ button, .button {
     margin: auto 5px auto 0px;
 }
 
+.signup-header-logo {
+    width: 95%;
+    max-width: 400px;
+}
+
 /* Divider Logo section */
 .divider-logo {
     width: 50%;
