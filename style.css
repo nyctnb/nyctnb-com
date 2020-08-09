@@ -50,11 +50,6 @@ button, .button {
     margin: auto 5px auto 0px;
 }
 
-.signup-header-logo {
-    width: 95%;
-    max-width: 400px;
-}
-
 /* Divider Logo section */
 .divider-logo {
     width: 50%;
@@ -226,4 +221,16 @@ footer {
 
 .fb-theme-icon:hover {
     color: #4267B2;
+}
+
+/* Sign Up */
+.signup-header-logo {
+    width: 95%;
+    max-width: 400px;
+}
+
+.signup-promo-photo {
+    width: 90%;
+    max-width: 280px;
+    margin: 5px 8px;
 }
