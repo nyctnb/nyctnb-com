@@ -222,3 +222,15 @@ footer {
 .fb-theme-icon:hover {
     color: #4267B2;
 }
+
+/* Sign Up */
+.signup-header-logo {
+    width: 95%;
+    max-width: 400px;
+}
+
+.signup-promo-photo {
+    width: 90%;
+    max-width: 280px;
+    margin: 5px 8px;
+}
