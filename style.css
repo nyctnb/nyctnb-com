@@ -234,3 +234,9 @@ footer {
     max-width: 280px;
     margin: 5px 8px;
 }
+
+@media (max-width: 500px) {
+    .signup-promo-photo {
+        max-width: 90%;
+    }
+}
