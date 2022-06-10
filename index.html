@@ -10,7 +10,7 @@
     <meta name="title" content="NYC Tech & Beer">
     <link rel="icon" type="image/png" href="https://cdn.bglad.io/img/nyctnb/nyctnb-logo-vtall.png">
     <meta name="description" content="NYC's group for people who love talking tech, drinking craft beer, and everything in between.">
-    <meta name="keywords" content="nyc,new york,tech,technology,beer,craft beer,software,startup">
+    <meta name="keywords" content="nyc,new york,tech,technology,beer,craft beer,software,startup,happy hour">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="English">
@@ -80,6 +80,8 @@
                 Shop
             </button>
         </a> <!-- Shop -->
+        <!-- Paypal Donate -->
+        <a id="paypal-donate-button-box" class="paypal-donate-button-box social-button__link"></a>
     </section>
 
     <!-- Sign Up Form -->
@@ -167,6 +169,30 @@
 
           gtag('config', 'UA-119556311-6');
       }
+    </script>
+
+    <!-- Paypal -->
+    <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+    <script>
+        (function renderPaypalDonateButton() {
+            const PAYPAL_DEFAULT_BUTTON_SRC = 'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif';
+            const WRAPPER_DIV_ID = 'paypal-donate-button-box';
+            const BUTTON_IMG_ID = 'donate-button';
+            const SOCIAL_BUTTON_CLASS = 'social-button';
+            const SOCIAL_BUTTON_IMG_CLASS = 'social-button-img';
+            PayPal.Donation.Button({
+                env:'production',
+                hosted_button_id:'D98BNNU5KEU7C',
+                image: {
+                    src: 'https://nyctnb.com/img/NYCTnB-Donate-Button.PaypalLogo.png',
+                    alt:'Donate with PayPal button',
+                    title:'Help New York Tech & Beer® put on free, fun events!',
+                }
+            }).render('#' + WRAPPER_DIV_ID);
+            const donateButtonImg = document.getElementById(BUTTON_IMG_ID);
+            donateButtonImg.classList.add(SOCIAL_BUTTON_CLASS);
+            donateButtonImg.classList.add(SOCIAL_BUTTON_IMG_CLASS);
+        })();
     </script>
 </body>
 </html>

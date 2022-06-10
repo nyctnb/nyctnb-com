@@ -93,8 +93,6 @@ button, .button {
 
 /* Links section */
 .social-button {
-    background-color: orangered;
-
     display: inline-block;
 
     color: white;
@@ -112,6 +110,14 @@ button, .button {
     outline-style: none;
     
     margin: 10px 10px;
+}
+
+.social-button-img {
+    box-shadow: none;
+}
+
+.paypal-donate-button-box {
+    vertical-align: middle;
 }
 
 .social-button:active {
