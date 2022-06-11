@@ -61,7 +61,7 @@
     </section>
     <br/>
     <!-- Social Links -->
-    <section class="links-container">
+    <section id="links-container" class="links-container">
         <a class="social-button__link" href="https://www.meetup.com/NYCTnB" target="_blank">
             <button class="social-button meetup-theme">
                 <i class="fab fa-meetup" aria-hidden="true"></i>
@@ -81,7 +81,6 @@
             </button>
         </a> <!-- Shop -->
         <!-- Paypal Donate -->
-        <a id="paypal-donate-button-box" class="paypal-donate-button-box social-button__link"></a>
     </section>
 
     <!-- Sign Up Form -->
@@ -175,23 +174,95 @@
     <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
     <script>
         (function renderPaypalDonateButton() {
-            const PAYPAL_DEFAULT_BUTTON_SRC = 'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif';
-            const WRAPPER_DIV_ID = 'paypal-donate-button-box';
-            const BUTTON_IMG_ID = 'donate-button';
-            const SOCIAL_BUTTON_CLASS = 'social-button';
-            const SOCIAL_BUTTON_IMG_CLASS = 'social-button-img';
-            PayPal.Donation.Button({
+            const allowedButtonParams = [
+                // Primary details
+                'hosted_button_id', 'business', 'amount', 'currency_code',
+                // Donation options
+                'no_recurring', 'no_shipping', 'no_note', 'cn',
+                // Program and Purpose
+                'item_name', 'item_number',
+                // URLs
+                'cancel_return', 'notify_url', 'return',
+                // Logo image
+                'cpp_header_image', 'image_url',
+                // Others
+                'invoice', 'custom', 'rm',
+                // Sender Details
+                'night_phone_a', 'night_phone_b', 'night_phone_c', 'first_name', 'last_name', 'email', 'address1', 'address2', 'city', 'state', 'zip', 'country',
+                // Source stuff
+                'button_source', 'bn',
+                // donationDetailOptions
+                'on0', 'os0', 'on1', 'os1'
+            ];
+            function CustomPaypalDonateButton(props) {
+                const getValidQueryParams = () => {
+                    const allowedParamProps = {};
+                    for (const key in props) {
+                        if (allowedButtonParams.includes(key)) {
+                            allowedParamProps[key] = props[key].toString();
+                        }
+                    }
+                    return allowedParamProps;
+                };
+                // The zoid buttons use "init" and "instance"
+                // So following same convention here as well
+                const init = () => {
+                    const instance = {
+                        render: function(selector) {
+                            const DEFAULT_IMAGE = 'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif';
+                            const BUTTON_CONTAINER = document.querySelector(selector);
+
+                            if (!BUTTON_CONTAINER) {
+                                console.log(
+                                    'Donate Button Container not found for ',
+                                    selector
+                                );
+                                return;
+                            }
+
+                            const linkWrapper = document.createElement('a');
+                            linkWrapper.classList.add('social-button__link');
+                            linkWrapper.setAttribute('target', '_blank');
+
+                            const button = document.createElement('button');
+                            button.classList.add('social-button', 'paypal-theme');
+                            const paypalLogoImg = document.createElement('img');
+                            paypalLogoImg.setAttribute('src', 'img/paypalLogo.png');
+                            paypalLogoImg.classList.add('social-button-img');
+                            button.appendChild(paypalLogoImg);
+                            button.innerHTML += '&nbsp;Donate';
+
+                            linkWrapper.appendChild(button);
+
+                            const validQueryParams = getValidQueryParams();
+
+                            button.addEventListener('click', function(event) {
+                                event.preventDefault();
+                                PayPal.Donation.Checkout({
+                                    env: props.env,
+                                    baseUrl: props.baseUrl,
+                                    token: props.token,
+                                    onComplete: props.onComplete,
+                                    ...validQueryParams
+                                }).renderTo(window.parent);
+                            });
+
+                            BUTTON_CONTAINER.appendChild(linkWrapper);
+                        }
+                    };
+                    return instance;
+                };
+
+                return {
+                    init
+                };
+            };
+
+            // Rendering and appending Donate button
+            CustomPaypalDonateButton({
                 env:'production',
-                hosted_button_id:'D98BNNU5KEU7C',
-                image: {
-                    src: 'https://nyctnb.com/img/NYCTnB-Donate-Button.PaypalLogo.png',
-                    alt:'Donate with PayPal button',
-                    title:'Help New York Tech & Beer® put on free, fun events!',
-                }
-            }).render('#' + WRAPPER_DIV_ID);
-            const donateButtonImg = document.getElementById(BUTTON_IMG_ID);
-            donateButtonImg.classList.add(SOCIAL_BUTTON_CLASS);
-            donateButtonImg.classList.add(SOCIAL_BUTTON_IMG_CLASS);
+                hosted_button_id:'D98BNNU5KEU7C'
+            }).init().render('#links-container');
         })();
     </script>
 </body>

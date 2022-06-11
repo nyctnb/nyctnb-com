@@ -110,13 +110,12 @@ button, .button {
     outline-style: none;
     
     margin: 10px 10px;
+
+    cursor: pointer;
 }
 
 .social-button-img {
-    box-shadow: none;
-}
-
-.paypal-donate-button-box {
+    height: 75%;
     vertical-align: middle;
 }
 
@@ -171,6 +170,14 @@ button, .button {
 .shop-theme {
     background-color: white;
     color: #000d40;
+}
+
+.paypal-theme {
+    background-color: #FFD659;
+    color: #000D40;
+}
+.paypal-theme:hover {
+    background-color: #FFE594;
 }
 
 /* .fb-theme {
