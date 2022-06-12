@@ -74,13 +74,13 @@
                 Media
             </button>
         </a> <!-- Instagram -->
+        <span id="paypal-donate-box"></span><!-- Paypal Donate -->
         <a class="social-button__link" href="https://shop.nyctnb.com" target="_blank">
             <button class="social-button shop-theme">
                 <i class="fas fa-tshirt" aria-hidden="true"></i>
                 Shop
             </button>
         </a> <!-- Shop -->
-        <!-- Paypal Donate -->
     </section>
 
     <!-- Sign Up Form -->
@@ -262,7 +262,7 @@
             CustomPaypalDonateButton({
                 env:'production',
                 hosted_button_id:'D98BNNU5KEU7C'
-            }).init().render('#links-container');
+            }).init().render('#paypal-donate-box');
         })();
     </script>
 </body>
