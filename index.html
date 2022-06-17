@@ -74,7 +74,9 @@
                 Media
             </button>
         </a> <!-- Instagram -->
-        <span id="paypal-donate-box"></span><!-- Paypal Donate -->
+        <a class="social-button__link" target="_blank">
+            <button id="paypal-dontate-button" class="social-button paypal-theme"><img src="img/paypalLogo.png" class="social-button-img">&nbsp;Donate</button>
+        </a><!-- Paypal Donate -->
         <a class="social-button__link" href="https://shop.nyctnb.com" target="_blank">
             <button class="social-button shop-theme">
                 <i class="fas fa-tshirt" aria-hidden="true"></i>
@@ -173,8 +175,8 @@
     <!-- Paypal -->
     <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
     <script>
-        (function renderPaypalDonateButton() {
-            const allowedButtonParams = [
+        (function addPaypalButtonOnClick() {
+            const allowedPaypalButtonParams = [
                 // Primary details
                 'hosted_button_id', 'business', 'amount', 'currency_code',
                 // Donation options
@@ -194,75 +196,32 @@
                 // donationDetailOptions
                 'on0', 'os0', 'on1', 'os1'
             ];
-            function CustomPaypalDonateButton(props) {
-                const getValidQueryParams = () => {
-                    const allowedParamProps = {};
-                    for (const key in props) {
-                        if (allowedButtonParams.includes(key)) {
-                            allowedParamProps[key] = props[key].toString();
-                        }
+            const getValidPaypalQueryParams = (paypalProps) => {
+                const allowedParamProps = {};
+                for (const key in paypalProps) {
+                    if (allowedPaypalButtonParams.includes(key)) {
+                        allowedParamProps[key] = paypalProps[key].toString();
                     }
-                    return allowedParamProps;
-                };
-                // The zoid buttons use "init" and "instance"
-                // So following same convention here as well
-                const init = () => {
-                    const instance = {
-                        render: function(selector) {
-                            const DEFAULT_IMAGE = 'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif';
-                            const BUTTON_CONTAINER = document.querySelector(selector);
-
-                            if (!BUTTON_CONTAINER) {
-                                console.log(
-                                    'Donate Button Container not found for ',
-                                    selector
-                                );
-                                return;
-                            }
-
-                            const linkWrapper = document.createElement('a');
-                            linkWrapper.classList.add('social-button__link');
-                            linkWrapper.setAttribute('target', '_blank');
-
-                            const button = document.createElement('button');
-                            button.classList.add('social-button', 'paypal-theme');
-                            const paypalLogoImg = document.createElement('img');
-                            paypalLogoImg.setAttribute('src', 'img/paypalLogo.png');
-                            paypalLogoImg.classList.add('social-button-img');
-                            button.appendChild(paypalLogoImg);
-                            button.innerHTML += '&nbsp;Donate';
-
-                            linkWrapper.appendChild(button);
-
-                            const validQueryParams = getValidQueryParams();
-
-                            button.addEventListener('click', function(event) {
-                                event.preventDefault();
-                                PayPal.Donation.Checkout({
-                                    env: props.env,
-                                    baseUrl: props.baseUrl,
-                                    token: props.token,
-                                    onComplete: props.onComplete,
-                                    ...validQueryParams
-                                }).renderTo(window.parent);
-                            });
-
-                            BUTTON_CONTAINER.appendChild(linkWrapper);
-                        }
-                    };
-                    return instance;
-                };
-
-                return {
-                    init
-                };
+                }
+                return allowedParamProps;
             };
 
-            // Rendering and appending Donate button
-            CustomPaypalDonateButton({
+            const paypalButton = document.getElementById('paypal-dontate-button');
+            const PAYPAL_CHECKOUT_PROPS = {
                 env:'production',
                 hosted_button_id:'D98BNNU5KEU7C'
-            }).init().render('#paypal-donate-box');
+            };
+            const validPaypalQueryParams = getValidPaypalQueryParams(PAYPAL_CHECKOUT_PROPS);
+            paypalButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                PayPal.Donation.Checkout({
+                    env: PAYPAL_CHECKOUT_PROPS.env,
+                    baseUrl: PAYPAL_CHECKOUT_PROPS.baseUrl,
+                    token: PAYPAL_CHECKOUT_PROPS.token,
+                    onComplete: PAYPAL_CHECKOUT_PROPS.onComplete,
+                    ...validPaypalQueryParams
+                }).renderTo(window.parent);
+            });
         })();
     </script>
 </body>
