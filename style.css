@@ -50,9 +50,10 @@ button, .button {
 
 /* Banner section */
 .banner-logo {
-    max-height: 100%;
-    width: 100%;
-    margin: auto 5px auto 0px;
+    width: 300px;
+    max-width: 95%;
+    max-height: 15%;
+    margin: 5px auto;
 }
 
 /* Divider Logo section */
@@ -210,6 +211,7 @@ button, .button {
 footer {
     text-align: center;
     margin: 30px auto 10px auto;
+    max-height: 5%;
 }
 
 .footer-icon {
@@ -242,11 +244,6 @@ footer {
 }
 
 /* Sign Up */
-.signup-header-logo {
-    width: 95%;
-    max-width: 400px;
-}
-
 .signup-promo-photo {
     width: 90%;
     max-width: 280px;
@@ -260,12 +257,7 @@ footer {
 }
 
 /* Sign In */
-.signin-header-logo {
-    width: 95%;
-    max-width: 250px;
-}
-
-.google-signin-form_iframe {
+.google-form-iframe {
     display: block;
     margin: 0 auto;
     width: 640px;
@@ -278,10 +270,30 @@ footer {
     border-color: silver;
     border-width: 2px;
     border-style: solid;
-    /* box-shadow: 0px 0px 50px black; */
 
     bottom: 100px;
     background-image: url('https://cdn.bglad.io/img/nyctnb/logo/neon-city-logo/NYCTnB-Neon-City-logo.poster.no-border.png');
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center;
     background-repeat: space;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .google-signin-form_iframe {
+        max-height: 70%;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {...} */
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .google-signin-form_iframe {
+        height: 80%;
+        width: 90%;
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {} */
