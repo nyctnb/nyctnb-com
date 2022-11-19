@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Sign In</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000D40">
+
+    <meta name="title" content="NYC Tech & Beer - Event Sign In">
+    <link rel="icon" type="image/png" href="https://cdn.bglad.io/img/nyctnb/nyctnb-logo-vtall.png">
+    <meta name="description" content="NYC's group for people who love talking tech, drinking craft beer, and everything in between.">
+    <meta name="keywords" content="nyc,new york,tech,technology,beer,happy hour,craft beer,software,startup">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="author" content="David J. Cunningham">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nyctnb.com/signin">
+    <meta property="og:title" content="NYC Tech & Beer - Event Sign In">
+    <meta property="og:site_name" content="NYC Tech & Beer">
+    <meta property="og:description" content="NYC's group for people who love talking tech, drinking craft beer, and everything in between.">
+    <meta property="og:image" content="https://cdn.bglad.io/img/nyctnb/nyctnb-logo-wbanner.png">
+
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="https://cdn.bglad.io/img/nyctnb/nyctnb-logo-wbanner.png">
+    <meta property="twitter:url" content="https://nyctnb.com/signin">
+    <meta property="twitter:title" content="NYC Tech & Beer - Event Sign In">
+    <meta property="twitter:description" content="NYC's group for people who love talking tech, drinking craft beer, and everything in between.">
+    <meta property="twitter:image" content="https://cdn.bglad.io/img/nyctnb/nyctnb-logo-wbanner.png">
+
+
+    <!-- Third Party CSS -->
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Roboto|Playfair+Display&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Style -->
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+    <section>
+        <img class="signin-header-logo" src="https://cdn.bglad.io/img/nyctnb/logo/NYCTnB_event-sign-in-logo.png" alt="Sign In - New York Tech $amp; Beer"/>
+    </section>
+
+    <!-- Event Sign In Form (embedded Google Form)-->
+    <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeTxapWVPilMYNHjMjGruQ_-CfUODhLLFy2vd1nDfwFhQC_rg/viewform?embedded=true"
+        class="google-signin-form_iframe"
+        width="640" height="1695" frameborder="0" marginheight="0" marginwidth="0"
+        scrolling="auto"
+    >Loading…</iframe>
+
+    <!-- Footer (Small Links) -->
+    <footer>
+        <a class="footer-icon__link" href="https://www.meetup.com/NYCTnB" target="_blank">
+            <i class="fab fa-meetup footer-icon meetup-theme-icon" aria-hidden="true"></i>
+        </a> <!-- Meetup -->
+        <a class="footer-icon__link" href="https://instagram.com/nyctnb" target="_blank">
+            <i class="fab fa-instagram footer-icon instagram-theme-icon" aria-hidden="true"></i>
+        </a> <!-- Instagram -->
+        <a class="footer-icon__link" href="https://facebook.com/nyctnb" target="_blank">
+            <i class="fab fa-facebook-square footer-icon fb-theme-icon" aria-hidden="true"></i>
+        </a> <!-- FB -->
+    </footer>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119556311-6"></script>
+    <script>
+      const BASE_PROD_DOMAIN = "nyctnb.com";
+      // Filtering localhost/development IPs
+      if (document.location.hostname.search(BASE_PROD_DOMAIN) !== -1) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-119556311-6');
+      }
+    </script>
+</body>
+</html>
