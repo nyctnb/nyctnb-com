@@ -67,35 +67,6 @@
         </a> <!-- FB -->
     </footer>
 
-    <!-- MCE onChange logic -->
-    <script>
-        (() => {
-            /* Mailchimp input logic */
-
-            // Mailchimp input elements
-            const emailInput = document.getElementById('mce-EMAIL');
-            const firstNameInput = document.getElementById('mce-FNAME');
-            const lastNameInput = document.getElementById('mce-LNAME');
-            const submitButton = document.getElementById('mc-embedded-subscribe');
-
-            (() => {
-                // Setting onchange/keyup event listeners for Mailchimp input elements
-                emailInput.addEventListener('change', onChangeMceInput);
-                emailInput.addEventListener('keyup', onChangeMceInput);
-
-                firstNameInput.addEventListener('change', onChangeMceInput);
-                firstNameInput.addEventListener('keyup', onChangeMceInput);
-
-                lastNameInput.addEventListener('change', onChangeMceInput);
-                lastNameInput.addEventListener('keyup', onChangeMceInput);
-            })();
-            // onchange listener that sets the submit button to disabled/enabled
-            function onChangeMceInput(e) {
-                submitButton.disabled = !(emailInput.value && emailInput.value.length > 0);
-            }
-        })();
-    </script>
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119556311-6"></script>
     <script>
