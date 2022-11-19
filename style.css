@@ -2,6 +2,11 @@
  * NYC Tech & Beer - Stylesheet
  */
 
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
 body {
     background-color: #000D40;
     padding-bottom: 15px;
@@ -265,6 +270,7 @@ footer {
     margin: 0 auto;
     width: 640px;
     height: 750px;
+    max-width: 90%;
 
     overflow-y: auto;
 
