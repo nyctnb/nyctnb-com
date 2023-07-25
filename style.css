@@ -173,6 +173,22 @@ button, .button {
                     #1f44b3 90%);
 }
 
+.luma-theme {
+    background-color: white;
+    color: #003;
+}
+.luma-theme:hover {
+    background-color: #bbf;
+}
+
+.nylocal-theme {
+    background-color: black;
+    color: gold;
+}
+.nylocal-theme:hover {
+    background-color: #222;
+}
+
 .shop-theme {
     background-color: #005b9b;
     color: white;
