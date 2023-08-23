@@ -45,7 +45,10 @@
 
     <!-- Banner -->
     <section>
-        <img class="banner-logo" src="https://cdn.bglad.io/img/nyctnb/nyctnb-logo_tight.png" alt="NYC Tech & Beer">
+        <div class="banner-logo-wrapper">
+            <img class="banner-logo" src="img/NYCTnB-Neon-City-logo.square.png" alt="NYC Tech & Beer">
+            <!-- <img class="banner-logo" src="https://cdn.bglad.io/img/nyctnb/nyctnb-logo_tight.png" alt="NYC Tech & Beer"> -->
+        </div>
     </section>
 
     <!-- Description -->
@@ -54,47 +57,73 @@
             Brew it and they will come!
         </p>
         <p class="description">
-            New York City Tech & Beer is for those interested in talking tech, drinking craft beer, and everything in between!  We host social happy hours and tech talks throughout New York City.
+            New York City Tech & Beer is for those interested in talking and learning about tech, drinking craft beer, and everything in between!  We host social happy hours and AI tech talks throughout New York City.
         </p>
-        <p class="description">Whether you're a programmer, a tech entrepreneur, or an amateur tech enthusiast who wants to meet with others and enjoy great beer, this is the group for you.</p>
+        <p class="description">Whether you're a software developer, a tech entrepreneur, or a tech enthusiast who wants to meet with others, enjoy a beer and learn about tech, this is the group for you.</p>
         <p class="description">Swing by, drink, and connect.</p>
     </section>
     <br/>
     <!-- Social Links -->
     <section id="links-container" class="links-container">
+        <!-- Meetup: NYCTnB -->
         <a class="social-button__link" href="https://www.meetup.com/NYCTnB" target="_blank">
-            <button class="social-button meetup-theme">
+            <button class="social-button meetup-tnb-theme">
                 <i class="fab fa-meetup" aria-hidden="true"></i>
-                Meetup
+                Socials
             </button>
-        </a> <!-- Meetup -->
+        </a>
+        <!-- Meetup: NYCAIU -->
+        <a class="social-button__link" href="https://www.meetup.com/NYCAIU" target="_blank">
+            <button class="social-button meetup-aiu-theme">
+                <i class="fab fa-meetup" aria-hidden="true"></i>
+                AI Tech Talks
+            </button>
+        </a>
+
+        <!-- Luma -->
         <a class="social-button__link" href="https://lu.ma/nyctnb" target="_blank">
             <button class="social-button luma-theme">
-                <i class="fa-solid fa-moon" aria-hidden="true"></i>
-                Luma
+                <!-- <i class="fa-solid fa-moon" aria-hidden="true"></i> -->
+                    <span class="luma-wrap">
+                        <svg class="luma-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 133 134">
+                            <path
+                                fill="currentColor"
+                                d="M133 67C96.282 67 66.5 36.994 66.5 0c0 36.994-29.782 67-66.5 67 36.718 0 66.5 30.006 66.5 67 0-36.994 29.782-67 66.5-67Z"
+                            ></path>
+                        </svg>
+                        Luma
+                    </span>
             </button>
-        </a> <!-- Luma -->
+        </a>
+
+        <!-- NY Local -->
         <a class="social-button__link" href="https://www.newyorklocal.ai/group/4372" target="_blank">
             <button class="social-button nylocal-theme">
                 <i class="fa-solid fa-city" aria-hidden="true"></i>
                 NY Local 
             </button>
-        </a> <!-- NY Local -->
+        </a>
+
+        <!-- Instagram -->
         <a class="social-button__link" href="https://instagram.com/nyctnb" target="_blank">
             <button class="social-button instagram-theme">
                 <i class="fab fa-instagram" aria-hidden="true"></i>
-                Media
+                Instagram
             </button>
-        </a> <!-- Instagram -->
+        </a>
+
+        <!-- Paypal Donate -->
         <a class="social-button__link" target="_blank">
             <button id="paypal-dontate-button" class="social-button paypal-theme"><img src="img/paypalLogo.png" class="social-button-img">&nbsp;Donate</button>
-        </a><!-- Paypal Donate -->
+        </a>
+
+        <!-- Shop -->
         <!--a class="social-button__link" href="https://shop.nyctnb.com" target="_blank">
             <button class="social-button shop-theme">
                 <i class="fas fa-tshirt" aria-hidden="true"></i>
                 Shop
             </button>
-        </a--> <!-- Shop -->
+        </a-->
     </section>
 
     <!-- Sign Up Form -->

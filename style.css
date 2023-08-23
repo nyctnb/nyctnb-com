@@ -2,13 +2,14 @@
  * NYC Tech & Beer - Stylesheet
  */
 
+/* Global */
 html, body {
     height: 100%;
     width: 100%;
 }
 
 body {
-    background-color: #000D40;
+    background: #004074 url("img/NYCTnB-Neon-City-logo.square.transparent-tile.png") center/50px fixed;
     padding-bottom: 15px;
 }
 
@@ -47,13 +48,25 @@ button, .button {
     color: white;
 }
 
-
 /* Banner section */
 .banner-logo {
-    width: 300px;
+    display: block;
+    width: 100%;
+    box-shadow: #222 0px 0px 5px;
+    border-radius: 10px;
+}
+
+.banner-logo-wrapper {
+    display: inline-block;
+
+    box-shadow: black 0px 0px 50px;
+    background-color: white;
+    padding: 5px;
+
+    border-radius: 10px;
     max-width: 95%;
     max-height: 15%;
-    margin: 5px auto;
+    width: 300px;
 }
 
 /* Divider Logo section */
@@ -103,7 +116,7 @@ button, .button {
 
     color: white;
     font-size: 40px;
-    font-family: 'Roboto', 'Arial', sans-serif;
+    font-family: 'Playfair Display', 'Roboto', 'Arial', sans-serif;
 
     height: 100px;
     width: 75%;
@@ -112,9 +125,9 @@ button, .button {
 
     border-width: 0px;
     border-radius: 5px;
-    box-shadow: 3px 3px #333;
+    box-shadow: 4px 4px black;
     outline-style: none;
-    
+
     margin: 10px 10px;
 
     cursor: pointer;
@@ -133,16 +146,35 @@ button, .button {
     text-decoration: none;
 }
 
-.meetup-theme {
-    background-color: #ff2a4e;
+.meetup-tnb-theme {
+    background-color: #000D40;
     color: white;
 }
-.meetup-theme:hover {
+.meetup-tnb-theme:hover, .meetup-aiu-theme:hover {
     background-color: #ff4262;
 }
-.meetup-theme:active {
+.meetup-tnb-theme:active, .meetup-aiu-theme:active {
     background-color: #b81e38;
 }
+
+.meetup-aiu-theme {
+    color: #0909a6;
+    background-color: white;
+}
+/* .meetup-aiu-theme:hover {
+    background-color: #abc6f5;
+}
+.meetup-aiu-theme:active {
+    background-color: #0909a6;
+    color: white;
+} */
+.meetup-aiu-theme .fa-meetup {
+    color: #ff2a4e;
+}
+.meetup-aiu-theme:hover .fa-meetup {
+    color: white;
+}
+
 
 .instagram-theme {
     background: radial-gradient(
@@ -174,11 +206,22 @@ button, .button {
 }
 
 .luma-theme {
-    background-color: white;
-    color: #003;
+    /* background-color: white; 5200ff33*/
+    background: #002442 linear-gradient(#5200ff77 0%, #0066ff77 52.58%, #062d6777 100%);
+    /* color: #003; */
+    /* background-color: #250270; */
+    color: white;
 }
 .luma-theme:hover {
-    background-color: #bbf;
+    background-color: #300099;
+}
+.luma-wrap {
+    vertical-align: middle;
+    display: inline-flex;
+}
+.luma-icon {
+    height: 40px;
+    margin: 8px 8px 6px auto;
 }
 
 .nylocal-theme {
@@ -186,7 +229,8 @@ button, .button {
     color: gold;
 }
 .nylocal-theme:hover {
-    background-color: #222;
+    background-color: #3b3628;
+    color: yellow;
 }
 
 .shop-theme {
@@ -221,7 +265,6 @@ button, .button {
 .description__tagline {
     font-size: 40px;
 }
-
 
 /* Footer */
 footer {
