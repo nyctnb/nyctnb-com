@@ -48,6 +48,7 @@ button, .button {
     color: white;
 }
 
+
 /* Banner section */
 .banner-logo {
     display: block;
@@ -98,15 +99,19 @@ button, .button {
 }
 
 #mc-embedded-subscribe {
+    background-color: white;
+    color: #245;
     width: 30%;
     max-width: 100px;
     margin-top: 10px;
 }
 #mc-embedded-subscribe:hover {
-    background-color: #558;
+    background-color: white;
+    color: #467;
 }
 #mc-embedded-subscribe:active {
-    background-color: #336;
+    background-color: #dde;
+    color: #134;
 }
 
 
